@@ -42,7 +42,7 @@ function displayBook() {
 }
 
 const formDialog = document.querySelector(".form-dialog");
-const addBtn = document.querySelector(".add-button");
+const addBtn = document.querySelector(".open-form");
 addBtn.addEventListener("click", () => {
   formDialog.showModal();
 });
