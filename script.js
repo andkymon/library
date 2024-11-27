@@ -29,6 +29,7 @@ function displayBook() {
 
     }
     const removeBtn = document.createElement("button");
+    removeBtn.textContent = "❌";
     removeBtn.addEventListener("click", () => {
       myLibrary.splice(index, 1);
       displayBook();
