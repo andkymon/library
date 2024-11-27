@@ -22,3 +22,14 @@ tr:last-child > td:first-child {
 tr:last-child > td:last-child {
     border-bottom-right-radius: 8px;
 }
+
+.add-book-form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-buttons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-around;
+}

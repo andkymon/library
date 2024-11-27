@@ -18,10 +18,36 @@
             </tr>
         </thead>
     </table>
-    <dialog>
-        <p>Hello</p>
+    <dialog class="form-dialog">
+        <h1>Add a book</h1>
+        <form class="add-book-form">
+            <label for="title">
+                Title
+                <br>
+                <input type="text" id="title" name="title">
+            </label>
+            <label for="author">
+                Author
+                <br>
+                <input type="text" id="author" name="author">
+            </label>
+            <label for="genre">
+                Genre
+                <br>
+                <input type="text" id="genre" name="genre">
+            </label>
+            <label for="year">
+                Year
+                <br>
+                <input type="number" id="year" name="year">
+            </label>
+        </form>
+        <div class="form-buttons">
+            <button type="submit" class="submit-form">Add Book</button>
+            <button class="close-form">Close Form</button>
+        </div>
     </dialog>
-    <button class="addBtn">Add Book</button>
+    <button class="open-form">Add Book</button>
     <script src="script.js"></script>
 </body>
 </html>

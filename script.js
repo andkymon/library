@@ -26,7 +26,6 @@ function displayBook() {
       const field = document.createElement("td");
       field.textContent = entry[key];
       tableRow.append(field);
-
     }
     const removeBtn = document.createElement("button");
     removeBtn.textContent = "❌";
@@ -37,14 +36,29 @@ function displayBook() {
     tableRow.append(removeBtn);
     tbody.append(tableRow);
   });
-  
   table.append(tbody);
+  console.log(myLibrary);
 }
 
 const formDialog = document.querySelector(".form-dialog");
-const addBtn = document.querySelector(".open-form");
-addBtn.addEventListener("click", () => {
+const openFormBtn = document.querySelector(".open-form");
+const closeFormBtn = document.querySelector(".close-form");
+const submitFormBtn = document.querySelector(".submit-form");
+
+openFormBtn.addEventListener("click", () => {
   formDialog.showModal();
+});
+closeFormBtn.addEventListener("click", () => {
+  formDialog.close();
+});
+submitFormBtn.addEventListener("click", (event) => {
+  const inputs = document.querySelectorAll("input");
+  const inputData = [];
+  inputs.forEach((input) => {
+    inputData.push(input.value);
+  });
+  addBookToLibrary(...inputData);
+  displayBook();
 });
 
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "Fiction", 2000);
@@ -55,3 +69,4 @@ addBookToLibrary("Moby-Dick", "Herman Melville", "Adventure", 1851);
 addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "Fiction", 1951);
 
 displayBook();
+
