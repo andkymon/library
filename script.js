@@ -28,6 +28,12 @@ function displayBook() {
       tableRow.append(field);
 
     }
+    const removeBtn = document.createElement("button");
+    removeBtn.addEventListener("click", () => {
+      myLibrary.splice(index, 1);
+      displayBook();
+    });
+    tableRow.append(removeBtn);
     tbody.append(tableRow);
   });
   
@@ -41,5 +47,4 @@ addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", "Fiction", 1925);
 addBookToLibrary("Moby-Dick", "Herman Melville", "Adventure", 1851);
 addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "Fiction", 1951);
 
-displayBook();
 displayBook();
