@@ -41,6 +41,12 @@ function displayBook() {
   table.append(tbody);
 }
 
+const formDialog = document.querySelector(".form-dialog");
+const addBtn = document.querySelector(".addBtn");
+addBtn.addEventListener("click", () => {
+  formDialog.showModal();
+});
+
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "Fiction", 2000);
 addBookToLibrary("1984", "George Orwell", "Dystopian", 1949);
 addBookToLibrary("Pride and Prejudice", "Jane Austen", "Romance", 1813);
