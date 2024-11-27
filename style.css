@@ -2,3 +2,23 @@ table, th, td {
     border: 1px solid black;
 }
 
+table {
+    border-radius: 8px;
+    border-spacing: 1px;
+}
+
+th:first-child {
+    border-top-left-radius: 8px;
+}
+
+th:last-child {
+    border-top-right-radius: 8px;
+}
+
+tr:last-child > td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+tr:last-child > td:last-child {
+    border-bottom-right-radius: 8px;
+}
