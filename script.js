@@ -11,6 +11,21 @@ function addBookToLibrary(title, author, genre, year) {
   myLibrary.push(new Book(title, author, genre, year));
 }
 
+function generateID(index) {
+  const id = document.createElement("td");
+  id.textContent = index + 1;
+  return id;
+}
+
+function generateRemoveButton(index) {
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "❌";
+  removeBtn.addEventListener("click", () => {
+    myLibrary.splice(index, 1);
+    displayBook();
+  });
+}
+
 function displayBook() {
   const table = document.querySelector("table");
   const tbody = document.createElement("tbody");
@@ -18,26 +33,16 @@ function displayBook() {
 
   myLibrary.forEach((entry, index) => {
     const tableRow = document.createElement("tr");
-    const id = document.createElement("td");
-    id.textContent = index + 1;
-    tableRow.append(id);
-
+    tableRow.append(generateID(index));
     for(let key in entry) {
       const field = document.createElement("td");
       field.textContent = entry[key];
       tableRow.append(field);
     }
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "❌";
-    removeBtn.addEventListener("click", () => {
-      myLibrary.splice(index, 1);
-      displayBook();
-    });
-    tableRow.append(removeBtn);
+    tableRow.append(generateRemoveButton(index));
     tbody.append(tableRow);
   });
   table.append(tbody);
-  console.log(myLibrary);
 }
 
 const formDialog = document.querySelector(".form-dialog");
