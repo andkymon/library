@@ -50,6 +50,7 @@ function displayBook() {
       const field = document.createElement("td");
       if (key == "readStatus") {
         field.textContent = entry[key] == true ? "Read" : "Unread";
+        field.style.color = entry[key] == true ? "Green" : "Red";
       } else {
         field.textContent = entry[key];
       }
