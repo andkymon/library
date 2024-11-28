@@ -5,7 +5,7 @@ function Book(title, author, genre, year, readStatus) {
   this.author = author;
   this.genre = genre;
   this.year = year;
-  this.readStatus = readStatus == true ? "Read" : "Unread";
+  this.readStatus = readStatus;
 }
 
 function addBookToLibrary(title, author, genre, year, readStatus) {
@@ -16,6 +16,16 @@ function generateID(index) {
   const id = document.createElement("td");
   id.textContent = index + 1;
   return id;
+}
+
+function generateReadButton(index) {
+  const readBtn = document.createElement("button");
+  readBtn.textContent = "R";
+  readBtn.addEventListener("click", () => {
+    myLibrary[index].readStatus = myLibrary[index].readStatus == true ? false : true;
+    displayBook();
+  });
+  return readBtn;
 }
 
 function generateRemoveButton(index) {
@@ -38,9 +48,14 @@ function displayBook() {
     tableRow.append(generateID(index));
     for(let key in entry) {
       const field = document.createElement("td");
-      field.textContent = entry[key];
+      if (key == "readStatus") {
+        field.textContent = entry[key] == true ? "Read" : "Unread";
+      } else {
+        field.textContent = entry[key];
+      }
       tableRow.append(field);
     }
+    tableRow.append(generateReadButton(index));
     tableRow.append(generateRemoveButton(index));
     tbody.append(tableRow);
   });
