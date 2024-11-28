@@ -24,6 +24,7 @@ function generateRemoveButton(index) {
     myLibrary.splice(index, 1);
     displayBook();
   });
+  return removeBtn;
 }
 
 function displayBook() {
