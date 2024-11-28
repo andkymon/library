@@ -1,14 +1,15 @@
 const myLibrary = [];
 
-function Book(title, author, genre, year) {
+function Book(title, author, genre, year, readStatus) {
   this.title = title;
   this.author = author;
   this.genre = genre;
   this.year = year;
+  this.readStatus = readStatus == true ? "Read" : "Unread";
 }
 
-function addBookToLibrary(title, author, genre, year) {
-  myLibrary.push(new Book(title, author, genre, year));
+function addBookToLibrary(title, author, genre, year, readStatus) {
+  myLibrary.push(new Book(title, author, genre, year, readStatus));
 }
 
 function generateID(index) {
@@ -67,12 +68,12 @@ submitFormBtn.addEventListener("click", (event) => {
   displayBook();
 });
 
-addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "Fiction", 2000);
-addBookToLibrary("1984", "George Orwell", "Dystopian", 1949);
-addBookToLibrary("Pride and Prejudice", "Jane Austen", "Romance", 1813);
-addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", "Fiction", 1925);
-addBookToLibrary("Moby-Dick", "Herman Melville", "Adventure", 1851);
-addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "Fiction", 1951);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "Fiction", 2000, true);
+addBookToLibrary("1984", "George Orwell", "Dystopian", 1949, false);
+addBookToLibrary("Pride and Prejudice", "Jane Austen", "Romance", 1813, true);
+addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", "Fiction", 1925, false);
+addBookToLibrary("Moby-Dick", "Herman Melville", "Adventure", 1851, true);
+addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "Fiction", 1951, false);
 
 displayBook();
 
