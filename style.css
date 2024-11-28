@@ -73,7 +73,26 @@ h1 span {
 
 table {
     border-radius: 8px;
-    border-spacing: 1px;
+    border-spacing: 0px;
+    margin-top: 8px;
+}
+
+tr > * {
+    padding: 8px;
+    color: white;
+}
+
+th {
+    background-color: #334B5C;
+    font-weight: normal;
+}
+
+tr:nth-child(odd):has(td) {
+    background-color:#1C2833;
+}
+
+tr:nth-child(even):has(td) {
+    background-color:#212F3D;
 }
 
 th:first-child {
