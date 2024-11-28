@@ -77,7 +77,11 @@ submitFormBtn.addEventListener("click", (event) => {
   const inputs = document.querySelectorAll("input");
   const inputData = [];
   inputs.forEach((input) => {
-    inputData.push(input.value);
+    if (input.getAttribute("type") == "checkbox") {
+      inputData.push(input.checked == true ? true : false); 
+    } else {
+      inputData.push(input.value);
+    }
   });
   addBookToLibrary(...inputData);
   displayBook();
