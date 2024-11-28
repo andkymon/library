@@ -55,8 +55,10 @@ function displayBook() {
       }
       tableRow.append(field);
     }
-    tableRow.append(generateReadButton(index));
-    tableRow.append(generateRemoveButton(index));
+    const buttons = document.createElement("td");
+    buttons.append(generateReadButton(index));
+    buttons.append(generateRemoveButton(index));
+    tableRow.append(buttons);
     tbody.append(tableRow);
   });
   table.append(tbody);
