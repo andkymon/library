@@ -20,7 +20,7 @@ function generateID(index) {
 
 function generateReadButton(index) {
   const readBtn = document.createElement("button");
-  readBtn.textContent = "R";
+  readBtn.textContent = "📖";
   readBtn.addEventListener("click", () => {
     myLibrary[index].readStatus = myLibrary[index].readStatus == true ? false : true;
     displayBook();
