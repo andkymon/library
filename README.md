@@ -4,7 +4,7 @@
 The **Library App** is a simple web application that helps you manage a reading list. You can add books with details like title, author, genre, year, and reading status, update the status of books as "Read" or "Unread," and remove books from the list.  
 
 ## Live Demo  
-You can view the live demo of the project [here](#).  
+You can view the live demo of the project [here](https://andkymon.github.io/library/).  
 
 ## How to Use  
 1. **Add a Book**:  
