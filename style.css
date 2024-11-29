@@ -111,6 +111,23 @@ tr:last-child > td:last-child {
     border-bottom-right-radius: 8px;
 }
 
+td > button {
+    border-radius: 8px;
+    background-color: #1C2833;
+    border-width: 1px;
+    color: white;
+    height: 36px;
+    width: 36px;
+}
+
+td > button:first-of-type {
+    margin-right: 4px;
+}
+
+td > button:hover {
+    cursor: pointer;
+}
+
 .add-book-form {
     display: grid;
     gap: 16px;
