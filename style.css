@@ -40,6 +40,11 @@ p {
 h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
+/*Variables*/
+:root {
+    --logo-size: 48px;
+    --table-border-radius: 8px;
+}
 
 body {
     height: 100vh;
@@ -61,8 +66,8 @@ body > h1 {
 }
 
 h1 img {
-    height: 48px;
-    width: 48px;
+    height: var(--logo-size);
+    width: var(--logo-size);
 }
 
 h1 span {
@@ -72,7 +77,7 @@ h1 span {
 }
 
 table {
-    border-radius: 8px;
+    border-radius: var(--table-border-radius);
     border-spacing: 0px;
     margin-top: 8px;
 }
@@ -96,19 +101,19 @@ tr:nth-child(even):has(td) {
 }
 
 th:first-child {
-    border-top-left-radius: 8px;
+    border-top-left-radius: var(--table-border-radius);
 }
 
 th:last-child {
-    border-top-right-radius: 8px;
+    border-top-right-radius: var(--table-border-radius);
 }
 
 tr:last-child > td:first-child {
-    border-bottom-left-radius: 8px;
+    border-bottom-left-radius: var(--table-border-radius);
 }
 
 tr:last-child > td:last-child {
-    border-bottom-right-radius: 8px;
+    border-bottom-right-radius: var(--table-border-radius);
 }
 
 td:last-child {
