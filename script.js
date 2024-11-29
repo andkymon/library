@@ -88,6 +88,7 @@ submitFormBtn.addEventListener("click", (event) => {
   });
   addBookToLibrary(...inputData);
   displayBook();
+  formDialog.close();
 });
 
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "Fiction", 2000, false);
