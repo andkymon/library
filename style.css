@@ -111,7 +111,15 @@ tr:last-child > td:last-child {
     border-bottom-right-radius: 8px;
 }
 
-td > button {
+td:last-child {
+    text-align: center;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+button {
     border-radius: 8px;
     background-color: #1C2833;
     border-width: 1px;
@@ -120,12 +128,19 @@ td > button {
     width: 36px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 td > button:first-of-type {
     margin-right: 4px;
 }
 
-td > button:hover {
-    cursor: pointer;
+.open-form {
+    border-color: maroon;
+    background-color: maroon;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .add-book-form {
