@@ -51,7 +51,7 @@ body {
     font-family: open-sans, sans-serif;
 }
 
-h1 {
+body > h1 {
     color: white;
     font-family: logo, sans-serif;
     display: flex;
@@ -112,7 +112,7 @@ tr:last-child > td:last-child {
 }
 
 td:last-child {
-    text-align: center;
+    text-wrap: nowrap;
 }
 
 th:last-child {
@@ -143,13 +143,42 @@ td > button:first-of-type {
     font-size: 1.5rem;
 }
 
+.form-dialog {
+    align-self: center;
+    justify-self: center;
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.form-dialog h1 {
+    font-size: 2rem;
+}
+
 .add-book-form {
     display: grid;
+    margin-top: 16px;;
     gap: 16px;
+}
+
+.add-book-form input {
+    border-radius: 8px;
+    border-width: 1px;
+    width: 100%;
+}
+
+.add-book-form input[type="checkbox"] {
+    width: min-content;
 }
 
 .form-buttons {
     margin-top: 16px;
     display: flex;
-    justify-content: space-around;
+    gap: 16px;
+}
+
+.form-buttons > button {
+    padding: 8px;
+    width: 128px;
+    height: min-content;
+    font-weight: bold;
 }
