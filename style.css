@@ -153,6 +153,7 @@ td > button:first-of-type {
     justify-self: center;
     border-radius: 8px;
     padding: 32px;
+    border: none;
 }
 
 .form-dialog h1 {
