@@ -90,11 +90,11 @@ submitFormBtn.addEventListener("click", (event) => {
   displayBook();
 });
 
-addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "Fiction", 2000, true);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "Fiction", 2000, false);
 addBookToLibrary("1984", "George Orwell", "Dystopian", 1949, false);
-addBookToLibrary("Pride and Prejudice", "Jane Austen", "Romance", 1813, true);
+addBookToLibrary("Pride and Prejudice", "Jane Austen", "Romance", 1813, false);
 addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", "Fiction", 1925, false);
-addBookToLibrary("Moby-Dick", "Herman Melville", "Adventure", 1851, true);
+addBookToLibrary("Moby-Dick", "Herman Melville", "Adventure", 1851, false);
 addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "Fiction", 1951, false);
 
 displayBook();
