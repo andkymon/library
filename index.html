@@ -33,32 +33,33 @@
             <label for="title">
                 Title
                 <br>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" required maxlength="100">
             </label>
             <label for="author">
                 Author
                 <br>
-                <input type="text" id="author" name="author">
+                <input type="text" id="author" name="author" required maxlength="100">
             </label>
             <label for="genre">
                 Genre
                 <br>
-                <input type="text" id="genre" name="genre">
+                <input type="text" id="genre" name="genre" required maxlength="50">
             </label>
             <label for="year">
                 Year
                 <br>
-                <input type="number" id="year" name="year">
+                <input type="number" id="year" name="year" required min="0" max="2025">
+                <span></span>
             </label>
-            <label for="year">
+            <label for="readStatus">
                 <input type="checkbox" id="readStatus" name="readStatus">
                 Book finished?
             </label>
+            <div class="form-buttons">
+                <button type="submit" class="submit-form">Add Book</button>
+                <button class="close-form">Cancel</button>
+            </div>
         </form>
-        <div class="form-buttons">
-            <button type="submit" class="submit-form">Add Book</button>
-            <button class="close-form">Cancel</button>
-        </div>
     </dialog>
     <script src="script.js"></script>
 </body>

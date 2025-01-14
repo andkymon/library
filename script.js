@@ -71,6 +71,7 @@ const formDialog = document.querySelector(".form-dialog");
 const openFormBtn = document.querySelector(".open-form");
 const closeFormBtn = document.querySelector(".close-form");
 const submitFormBtn = document.querySelector(".submit-form");
+const form = document.querySelector('.add-book-form');
 
 openFormBtn.addEventListener("click", () => {
   formDialog.showModal();
@@ -79,6 +80,12 @@ closeFormBtn.addEventListener("click", () => {
   formDialog.close();
 });
 submitFormBtn.addEventListener("click", (event) => {
+  if (form.checkValidity() === false) {
+    console.log(form.checkValidity());
+    return;
+  }
+  // Prevent the form from reloading the page on submit.
+  event.preventDefault();
   const inputs = document.querySelectorAll("input");
   const inputData = [];
   inputs.forEach((input) => {
@@ -91,6 +98,23 @@ submitFormBtn.addEventListener("click", (event) => {
   addBookToLibrary(...inputData);
   displayBook();
   formDialog.close();
+});
+
+const year = document.querySelector("#year");
+const yearValidationSpan = document.querySelector("#year + span");
+
+year.addEventListener("input", () => {
+    year.setCustomValidity("");
+    yearValidationSpan.textContent = "";
+    if (year.validity.rangeOverflow) {
+        const overflowMessage = "Please enter a year before 2025";
+        year.setCustomValidity(overflowMessage);
+        yearValidationSpan.textContent = overflowMessage;
+    } else if (year.validity.rangeUnderflow) {
+        const underflowMessage = "Please enter a valid year";
+        year.setCustomValidity(underflowMessage);
+        yearValidationSpan.textContent = underflowMessage;
+    }
 });
 
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "Fiction", 2000, false);
