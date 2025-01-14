@@ -178,6 +178,14 @@ td > button:first-of-type {
     width: min-content;
 }
 
+.add-book-form input:invalid {
+    border: 1px solid red;
+}
+
+.add-book-form input:invalid:focus {
+   outline: 1px solid red;
+}
+
 .form-buttons {
     margin-top: 16px;
     display: flex;
