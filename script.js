@@ -77,6 +77,7 @@ openFormBtn.addEventListener("click", () => {
   formDialog.showModal();
 });
 closeFormBtn.addEventListener("click", () => {
+  clearInputs();
   formDialog.close();
 });
 submitFormBtn.addEventListener("click", (event) => {
@@ -97,8 +98,20 @@ submitFormBtn.addEventListener("click", (event) => {
   });
   addBookToLibrary(...inputData);
   displayBook();
+  clearInputs();
   formDialog.close();
 });
+
+function clearInputs() {
+  const inputs = document.querySelectorAll("input");
+  inputs.forEach((input) => {
+    if (input.getAttribute("type") == "checkbox") {
+      input.checked = false;
+    } else {
+      input.value = "";
+    }
+  });
+}
 
 const year = document.querySelector("#year");
 const yearValidationSpan = document.querySelector("#year + span");
